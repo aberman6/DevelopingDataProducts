@@ -4,11 +4,6 @@ if(!("shiny" %in% rownames(installed.packages()))) {
 }
 library(shiny)
 
-if(!("ggplot2" %in% rownames(installed.packages()))) {
-  install.packages("ggplot2")
-}
-library(ggplot2)
-
 if(!("plotly" %in% rownames(installed.packages()))) {
   install.packages("plotly")
 }
@@ -33,7 +28,8 @@ shinyServer(function(input, output, session) {
     
     #create the plot
     plot_ly(data = df, x = ~agegp, y = ~ncases, type = input$chatType, marker = list(size = 10)) %>%
-      layout(xaxis = list(title = "Age (years)"), yaxis = list(title = "Number of cases"))
+     layout(title = "Number of (o)esophageal cancer cases", 
+            xaxis = list(title = "Age (years)"), yaxis = list(title = "Number of cases"))
   })
   
   #create sample size text output
