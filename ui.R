@@ -18,7 +18,7 @@ shinyUI(fluidPage(
         checkboxGroupInput("alc", "Alcohol Consumption Included:",
                      c("0-39g/day", "40-79", "80-119", "120+"), selected = c("0-39g/day", "40-79", "80-119", "120+")),
         checkboxGroupInput("tob", "Tobacco Consumption Included:",
-                     c("0-9g/day", "10-19", "20-29", "30+"), c("0-9g/day", "10-19", "20-29", "30+"))
+                     c("0-9g/day", "10-19", "20-29", "30+"), selected = c("0-9g/day", "10-19", "20-29", "30+"))
       ),
     
     # Show a plot of the generated distribution
