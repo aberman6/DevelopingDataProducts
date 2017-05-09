@@ -20,11 +20,11 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins
   sidebarLayout(
       sidebarPanel(
-        radioButtons("chatType", "Chart Type:", 
+        radioButtons("chatType", "Choose your chart type:", 
                      c("Boxplot" = "box", "Scatterplot" = "scatter")),
-        checkboxGroupInput("alc", "Alcohol Consumption Included:",
+        checkboxGroupInput("alc", "Choose the cases to display - alcohol consumption:",
                      c("0-39g/day", "40-79", "80-119", "120+"), selected = c("0-39g/day", "40-79", "80-119", "120+")),
-        checkboxGroupInput("tob", "Tobacco Consumption Included:",
+        checkboxGroupInput("tob", "Choose the cases to display - tobacco consumption:",
                      c("0-9g/day", "10-19", "20-29", "30+"), selected = c("0-9g/day", "10-19", "20-29", "30+"))
       ),
     
