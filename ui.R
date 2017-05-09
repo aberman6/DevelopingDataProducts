@@ -1,4 +1,3 @@
-#install and load packages
 if(!("shiny" %in% rownames(installed.packages()))) {
   install.packages("shiny")
 }
@@ -9,13 +8,12 @@ if(!("plotly" %in% rownames(installed.packages()))) {
 }
 library(plotly)
 
-#load dataset from R base package
 data("esoph")
 
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("(O)esophageal Cancer in Ille-et-Vilaine, France"),
+  titlePanel("(O)esophageal Cancer Data Exploration App"),
 
   # Sidebar with a slider input for number of bins
   sidebarLayout(
@@ -31,7 +29,8 @@ shinyUI(fluidPage(
     # Show a plot of the generated distribution
     mainPanel(
       plotlyOutput("casePlot"),
-      h3(textOutput("tex"))
+      h3(textOutput("samp")),
+      textOutput("source")
     )
   )
 ))
