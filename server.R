@@ -1,3 +1,4 @@
+#install and load packages
 if(!("shiny" %in% rownames(installed.packages()))) {
   install.packages("shiny")
 }
@@ -21,7 +22,7 @@ shinyServer(function(input, output, session) {
   
   output$casePlot <- renderPlotly({
 
-    #segment esoph by alcgp
+    #segment esoph into new dataset
     count <- 0
     for(i in 1:88){
       if((esoph[i, "alcgp"] %in% input$alc) & (esoph[i, "tobgp"] %in% input$tob)){ 
@@ -35,6 +36,7 @@ shinyServer(function(input, output, session) {
       layout(xaxis = list(title = "Age (years)"), yaxis = list(title = "Number of cases"))
   })
   
+  #create sample size text output
   output$tex <- renderText({
     count <- 0
     for(i in 1:88){
