@@ -1,8 +1,15 @@
+#install and load packages
 if(!("shiny" %in% rownames(installed.packages()))) {
   install.packages("shiny")
 }
 library(shiny)
 
+if(!("plotly" %in% rownames(installed.packages()))) {
+  install.packages("plotly")
+}
+library(plotly)
+
+#load dataset from R base package
 data("esoph")
 
 shinyUI(fluidPage(
